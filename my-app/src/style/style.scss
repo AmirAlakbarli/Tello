@@ -1,0 +1,23 @@
+@import url("http://fonts.cdnfonts.com/css/euclid-circular-a?styles=100037,100034,100036,100039,100031");
+@import "./sass-utils/reset.scss";
+@import "./sass-utils/variable.scss";
+@import "./sass-utils/mixin.scss";
+
+html {
+  font-size: 10px;
+  scroll-behavior: initial;
+}
+
+body {
+  font-family: $mainFont;
+  font-size: $fs-regular;
+}
+
+a {
+  text-decoration: none;
+}
+
+.container {
+  width: 90%;
+  margin: auto
+}

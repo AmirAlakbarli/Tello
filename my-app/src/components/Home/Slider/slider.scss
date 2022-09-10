@@ -1,0 +1,99 @@
+@import "../../../style/sass-utils/variable.scss";
+@import "../../../style/sass-utils/mixin.scss";
+
+.slider {
+    padding: 30px 0;
+
+    .swiper-slider {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        background-image: url(../../../images/background-slider.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: 0 -60px;
+
+
+        .swiper-info,
+        .swiper-image {
+            width: 40%;
+        }
+
+        .swiper-image {
+            height: 80%;
+        }
+
+        .swiper-image {
+            margin-bottom: 50px;
+
+            img {
+                width: 85%;
+                object-fit: cover;
+            }
+        }
+
+        .swiper-info {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            padding-top: 100px;
+
+            .swiper-title {
+                font-size: 35px;
+                line-height: 45px;
+                font-weight: $fw-500;
+            }
+
+            .swiper-text {
+                font-size: 16px;
+                line-height: 24px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: $mobile) {
+    .slider {
+        .swiper-slider {
+            flex-direction: column-reverse;
+            justify-content: center;
+            align-items: center;
+            gap:0;
+
+            .swiper-info,
+            .swiper-image {
+                margin-bottom:30px;
+                width: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .swiper-info {
+                padding-top: 0;
+                gap: 16px;
+
+                .swiper-title {
+                    text-align: center;
+                    font-size: 24px;
+                    line-height: 30px;
+                    font-weight: $fw-500;
+                }
+
+                .swiper-text {
+                    font-size: 16px;
+                    line-height: 24px;
+                    padding:0 10px;
+                    text-align: center;
+                }
+            }
+        }
+
+    }
+
+    .swiper-horizontal>.swiper-pagination-bullets,
+    .swiper-pagination-bullets.swiper-pagination-horizontal {
+        display: none;
+    }
+}

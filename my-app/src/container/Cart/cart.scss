@@ -1,0 +1,211 @@
+@import "../../style/sass-utils/variable.scss";
+@import "../../style/sass-utils/mixin.scss";
+
+.cart-body {
+    background-color: #E5E5E5;
+    padding: 50px 0 100px;
+    min-height: 500px;
+}
+
+.cart-count {
+    color: $clr-gray-2;
+    font-weight: $fw-500;
+}
+
+.cart-wrapper {
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-between;
+    gap: 32px;
+
+    .cart-details {
+        width: 25%;
+        background-color: #fff;
+        padding: 32px 24px;
+        border-radius: 16px;
+        height: min-content;
+
+        h1 {
+            color: #1D2123;
+            font-weight: 500;
+            font-size: 20px;
+            line-height: 28px;
+        }
+
+        ul {
+            margin: 0;
+            margin-top: 16px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid #E5E5E5;
+
+            &>li+li {
+                margin-top: 16px;
+            }
+
+            li {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+            }
+        }
+
+        .total-price {
+            color: #1D2123;
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 28px;
+            margin-top: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            span:last-child {
+                color: #DB2C66;
+            }
+        }
+    }
+
+    .cart-items {
+        width: 70%;
+        display: flex;
+        flex-direction: column;
+
+        &>.item+.item {
+            margin-top: 32px;
+        }
+
+        .item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #fff;
+            padding: 12px 16px;
+            border-radius: 8px;
+
+            .image {
+                width: 64px;
+                height: 64px;
+                cursor: pointer;
+
+                img {
+                    width: 100%;
+                }
+            }
+
+            .details {
+                flex: 1;
+                margin-left: 32px;
+
+                .variants {
+                    display: flex;
+                    align-items: center;
+                    margin-top: 12px;
+
+                    p:first-child {
+                        display: flex;
+                        align-items: center;
+                        margin-right: 32px;
+                        color: #828282;
+
+                        span {
+                            color: #333;
+                            margin-left: 12px;
+                        }
+                    }
+                }
+            }
+
+            .count {
+                margin: 0 100px;
+                display: flex;
+                align-items: center;
+
+                button {
+                    background-color: transparent;
+                    border: none;
+                    outline: none;
+                    cursor: pointer;
+                }
+
+                span {
+                    margin: 0 20px;
+                }
+            }
+
+            .delete {
+                background-color: transparent;
+                border: none;
+                outline: none;
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+.empty-cart {
+
+    width: 20%;
+    margin: 48px auto 100px auto;
+    padding: 130px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .cart-info {
+        margin-top: 48px;
+        color: $clr-gray-4;
+    }
+
+    .go-shopping {
+        height: 48px;
+        width: 280px;
+        margin-top: 32px;
+        background-color: $clr-brand;
+        color: white;
+        border: none;
+        outline: none;
+        border-radius: 8px;
+        cursor: pointer;
+    }
+
+
+}
+
+@media (max-width: 576px) {
+    .cart-details {
+        display: none;
+    }
+
+    .cart-items {
+        width: 100% !important;
+        flex-direction: column;
+
+        .item {
+            flex-direction: column;
+            position: relative;
+
+            .details {
+                margin: 24px 0 !important;
+                text-align: center;
+
+                .variants {
+                    margin-top: 20px !important;
+                }
+            }
+
+            .delete {
+                position: absolute;
+                top: 12px;
+                right: 12px;
+            }
+        }
+    }
+}
+
+.go-shopping {
+    padding: 16px 36px !important;
+}
+
+.empty-cart {
+    padding-top: 100px;
+}

@@ -1,0 +1,51 @@
+@import "../../../style/sass-utils/variable.scss";
+@import "../../../style/sass-utils/mixin.scss";
+
+.products-slider {
+    .swiper-wrapper {
+        gap: 3px;
+    }
+
+    margin: 28px 0;
+
+    &:nth-of-type(2) {
+        margin-top: 60px;
+    }
+
+    .slider-info {
+        font-weight: $fw-500;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+
+        .heading {
+            font-size: 20px;
+        }
+
+        .showAll {
+            font-size: 14px;
+        }
+    }
+
+    .slider-box {
+        margin-top: 32px;
+
+        .swiper {
+            display: flex;
+            justify-content: center !important;
+        }
+    }
+}
+
+@media screen and (max-width: $mobile) {
+    .products-slider .slider-info {
+        .heading {
+            font-size: 16px;
+        }
+
+        .showAll {
+            font-size: 14px;
+        }
+    }
+
+}

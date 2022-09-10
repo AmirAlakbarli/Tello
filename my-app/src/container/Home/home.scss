@@ -1,0 +1,109 @@
+@import "../../style/sass-utils/variable.scss";
+@import "../../style/sass-utils/mixin.scss";
+
+.loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  height: 80vh;
+
+  .loading-img {
+    width: 30%;
+  }
+}
+
+.home {
+  .category-cards {
+    margin: 50px 0 100px;
+    display: grid;
+    gap: 20px;
+    grid-template-areas:
+      "first first second second"
+      "first first second second"
+      "first first third third"
+      "first first third third";
+
+    >div {
+      background: linear-gradient(180deg, #f2e4dd, #e9e9e9);
+      position: relative;
+      padding: 40px;
+      border-radius: 8px;
+
+      h3 {
+        font-size: 24px;
+        line-height: 32px;
+        color: #303030;
+        margin-bottom: 16px;
+      }
+
+      a {
+        font-size: 16px;
+        line-height: 24px;
+        font-weight: 300;
+        color: #3366FF;
+      }
+    }
+
+    .category-telephones {
+      grid-area: first;
+      min-height: 400px;
+
+      .category-img {
+        width: 100%;
+      }
+    }
+
+    .category-watches {
+      grid-area: second;
+      height: 300px;
+
+      .category-img {
+        width: 40%;
+        right: 20px;
+      }
+    }
+
+    .category-accessours {
+      grid-area: third;
+      height: 350px;
+
+      .category-img {
+        width: 60%;
+        right: 20px;
+      }
+    }
+
+    .category-img {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+
+
+}
+
+@media screen and (max-width:576px) {
+  .home {
+    .category-cards {
+      grid-template-areas:
+        "first first first first"
+        "second second second second"
+        "third third third third";
+
+      >div:nth-child(2) .category-img {
+        width: 50%;
+      }
+
+      >div:nth-child(3) .category-img {
+        width: 65%;
+      }
+    }
+  }
+}

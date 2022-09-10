@@ -1,0 +1,17 @@
+@import "../../style/sass-utils/variable.scss";
+@import "../../style/sass-utils/mixin.scss";
+
+.filter-accordion {
+    .filter-brand {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .brandAll {
+        font-size: 16px;
+    }
+
+    .filter-brand li {
+        margin-bottom: 20px;
+    }
+}

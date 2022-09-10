@@ -1,0 +1,197 @@
+@import "../../style/sass-utils/variable.scss";
+@import "../../style/sass-utils/mixin.scss";
+
+.loading {
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.product-details {
+    margin-top: 70px !important;
+    margin-bottom: 100px !important;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+
+    .product-photos,
+    .product-info {
+        width: 48%;
+    }
+
+    .product-info {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        .product_name {
+            margin-bottom: 15px;
+
+            h1 {
+                font-size: $fs-regular;
+                font-weight: $fw-500;
+            }
+        }
+
+        .product_price,
+        .product_colors {
+            color: $clr-gray-2;
+            margin-bottom: 15px;
+        }
+
+        .product_sizes {
+            // color: white;
+        }
+
+
+
+        .product_price {
+            display: flex;
+            gap: 16px;
+            align-items: center;
+
+            .add {
+                display: none;
+            }
+        }
+
+        .product_colors {
+            display: flex;
+            gap: 22px;
+            align-items: center;
+
+            .colors {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 22px;
+
+                .color {
+                    outline: 1px solid black !important;
+
+                    width: 32px;
+                    height: 32px;
+                    border-radius: 50%;
+                    cursor: pointer;
+
+                    &.activeColor {
+                        width: 22px;
+                        height: 22px;
+                        border: 5px solid;
+                    }
+                }
+            }
+        }
+
+        .product_sizes {
+            padding-bottom: 24px;
+            border-bottom: 1px solid $clr-gray-5;
+            display: flex;
+            gap: 16px;
+            align-items: center;
+
+            .sizes {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 16px;
+
+                .size {
+                    width: 76px;
+                    height: 36px;
+                    background-color: $clr-gray-6;
+                    cursor: pointer;
+
+                    border-radius: 8px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+                    &.activeSize {
+                        background-color: gray;
+                        color: white;
+
+                    }
+                }
+            }
+        }
+
+        .product_count {
+            margin-bottom: 50px;
+            display: flex;
+            gap: 32px;
+            align-items: center;
+
+            button {
+                font-size: 18px;
+                width: 32px;
+                height: 32px;
+                border-radius: 50%;
+                border: none;
+                outline: none;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+        }
+
+    }
+
+    .add {
+        cursor: pointer !important;
+
+        background-color: $clr-brand;
+        color: white;
+        border: none;
+        outline: none;
+        padding: 15px 50px;
+        border-radius: $radius-btn;
+        display: flex;
+        justify-content: space-between;
+        gap: 10px;
+        align-items: center;
+    }
+
+}
+
+@media screen and (max-width: 576px) {
+    .product-details {
+
+        flex-direction: column;
+
+        .product-photos,
+        .product-info {
+            width: 100%;
+        }
+
+        .product-info {
+            .add_to_cart {
+                cursor: pointer !important;
+
+                .add {
+                    display: none;
+                }
+
+            }
+
+            .product_price {
+                justify-content: space-between;
+
+                h1 {
+                    display: none;
+                }
+
+                p {
+                    color: $clr-brand;
+                }
+
+                .add {
+                    display: flex;
+                }
+            }
+
+            .product_count {
+                margin-bottom: 10px;
+            }
+        }
+    }
+}

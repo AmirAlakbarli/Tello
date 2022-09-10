@@ -1,0 +1,13 @@
+@import "../../style/sass-utils/variable.scss";
+@import "../../style/sass-utils/mixin.scss";
+
+.navbar {
+    .categories {
+        display: flex;
+        gap: 56px;
+    }
+
+    a {
+        color: $clr-gray-2;
+    }
+}

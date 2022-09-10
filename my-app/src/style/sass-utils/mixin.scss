@@ -1,0 +1,40 @@
+@mixin textinfo($family,$style,$weight:normal,$size:1rem,$lheight:1rem,$color:null){
+
+    @if $family=="" {
+        font-family: $commonFontF;        
+    }
+    @else{
+        font-family: $family;
+    }    
+
+    @if $style=="" {
+       font-style: normal;    
+    }
+    @else{
+        font-style: $style;    
+    }
+
+    font-weight: $weight;
+    font-size: $size;
+    line-height: $lheight;
+    color: $color;
+}
+
+@mixin size($width,$height){
+    width: $width;
+    height: $height;    
+}
+
+@mixin divinfo($background,$border,$width:"",$height:"")
+{
+    @include size($width,$height);
+    background: $background;
+    border: $border;
+}
+
+@mixin flexinfo($wrap:nowrap,$direction:row,$justify:start,$align:stretch){
+    flex-wrap: $wrap;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $align;     
+}

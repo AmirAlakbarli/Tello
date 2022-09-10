@@ -1,0 +1,139 @@
+@import "../../style/sass-utils/variable.scss";
+@import "../../style/sass-utils/mixin.scss";
+
+.header {
+    .menu {
+        display: none;
+    }
+
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 16px 5% 12px 5%;
+    border-bottom: 1px solid $clr-brand;
+
+    .header-top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+
+            h1 {
+                font-size: 34px;
+                color: $clr-brand;
+            }
+        }
+
+        .searching {
+            width: 55%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .info {
+            display: flex;
+            gap: 30px;
+
+            &>div {
+                cursor: pointer;
+            }
+
+            .cart {
+
+                position: relative;
+
+                .loading{
+                    position: absolute;
+                    right: -15px;
+                    top: -10px;
+                    width: 20px;
+                    height: 20px;
+
+                    .loading-img{
+                        width: 100%;
+                        height: 100%;
+                    }
+
+                }
+
+                .count {
+                    position: absolute;
+                    right: -15px;
+                    top: -10px;
+                    background-color: $clr-brand;
+                    color: white;
+                    width: 20px;
+                    height: 20px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    border-radius: 50%;
+                }
+            }
+        }
+    }
+
+    .close-navbar {
+        display: none;
+    }
+
+}
+
+@media screen and (max-width: 576px) {
+    .header {
+        .menu {
+            display: inline-block;
+        }
+
+        .header-top {
+            flex-wrap: wrap;
+        }
+
+        .searching {
+            width: 100% !important;
+            order: 1;
+        }
+    }
+
+    .header-bottom {
+        position: fixed !important;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100vh;
+        background-color: #fff;
+        z-index: 1000;
+        transition: 0.5ms;
+
+        .navbar ul {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            padding: 16px 16px;
+        }
+    }
+
+    .open-navbar {
+        left: 0;
+    }
+
+    .close-navbar {
+        cursor: pointer;
+        padding: 16px 16px;
+        border-bottom: 1px solid #eee;
+        display: inline-block !important;
+    }
+
+    .categories{
+        margin-left:30px;
+    }
+
+    .categories a {
+        margin-bottom: 30px;
+    }
+}

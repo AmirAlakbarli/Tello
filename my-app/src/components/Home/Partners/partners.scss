@@ -1,0 +1,11 @@
+@import "../../../style/sass-utils/variable.scss";
+@import "../../../style/sass-utils/mixin.scss";
+
+.partners{
+    .partner-swiper{
+        display:flex;
+        align-items:center;
+        justify-content: center;
+    }
+    margin-bottom: 100px;
+}

@@ -1,0 +1,109 @@
+@import "../../style/sass-utils/variable.scss";
+@import "../../style/sass-utils/mixin.scss";
+
+.footer-wrapper {
+    background-color: #262626;
+    padding: 50px 0 0;
+
+    .footer {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        color: white;
+        padding-bottom: 50px;
+
+        .logo {
+            display: flex;
+            align-items: center;
+
+            h2 {
+                margin-left: 15px;
+            }
+        }
+
+        .item {
+            width: calc(100% / 4);
+
+            h3 {
+                font-size: 1.8rem;
+                line-height: 2.4rem;
+                margin-bottom: 30px;
+                font-weight: $fw-500;
+            }
+
+            li {
+                margin-top: 16px;
+
+                a {
+                    color: white;
+                    line-height: 2.4rem;
+                    font-size: $fs-medium;
+                    font-weight: $fw-400;
+                    width: 100%;
+
+                    &:hover {
+                        color: $clr-brand;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.sub-footer {
+    border-top: 1px solid #fff;
+
+    .sub-footer_block {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        color: white;
+        width: 100%;
+        padding: 25px 0;
+
+        ul {
+            display: flex;
+            gap:20px;
+
+            li {
+                a {
+                    color: white;
+                    font-size: 1.6rem !important;
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: $mobile) {
+    .footer {
+        flex-direction: column;
+        justify-content: center !important;
+        align-items: center !important;
+        text-align: center;
+
+        &>.item+.item {
+            margin-top: 50px;
+        }
+
+        .item {
+            width: 100% !important;
+
+            .logo {
+                justify-content: center;
+                align-items: center;
+            }
+        }
+    }
+
+    .sub-footer_block {
+        flex-direction: column;
+        justify-content: center !important;
+        align-items: center !important;
+
+        ul {
+            display: none !important;
+        }
+    }
+}
